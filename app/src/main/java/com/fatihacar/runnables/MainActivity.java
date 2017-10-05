@@ -19,12 +19,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void start(View view){
+    public void start(View view){//başlatma butonu
         textView=(TextView) findViewById(R.id.textView);
         number=0;
 
         handler =new Handler();
-        run =new Runnable() {//
+        run =new Runnable() {//arka planda çalışacak
             @Override
             public void run() {
                 textView.setText("Time: "+number);
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
      handler.post(run);
 
     }
-    public void stop(View view){
+    public void stop(View view){//durdurma butonu
         handler.removeCallbacks(run);
         number=0;
 
